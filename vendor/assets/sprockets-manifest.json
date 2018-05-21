@@ -1,0 +1,75 @@
+{
+  "files": {
+    "js/AutomataVendor-1f74751eec0d6a15cd7e.js": {
+      "logical_path": "AutomataVendor.js",
+      "mtime": "2017-05-05T15:41:13.000Z",
+      "size": 1770157,
+      "digest": "1f74751eec0d6a15cd7e"
+    },
+    "../../maps/js/AutomataVendor-1f74751eec0d6a15cd7e.js.map": {
+      "logical_path": "AutomataVendor.map",
+      "mtime": "2017-05-05T15:41:13.000Z",
+      "size": 1770157,
+      "digest": "1f74751eec0d6a15cd7e"
+    },
+    "js/AutomataClient-5ef2c6ead894784c7cc6.js": {
+      "logical_path": "AutomataClient.js",
+      "mtime": "2017-05-05T15:41:13.000Z",
+      "size": 634859,
+      "digest": "5ef2c6ead894784c7cc6"
+    },
+    "css/AutomataClient-c15b11550861db1721d880e93528f2de.css": {
+      "logical_path": "AutomataClient.css",
+      "mtime": "2017-05-05T15:41:13.000Z",
+      "size": 634859,
+      "digest": "5ef2c6ead894784c7cc6"
+    },
+    "../../maps/js/AutomataClient-5ef2c6ead894784c7cc6.js.map": {
+      "logical_path": "AutomataClient.map",
+      "mtime": "2017-05-05T15:41:13.000Z",
+      "size": 634859,
+      "digest": "5ef2c6ead894784c7cc6"
+    },
+    "../../maps/css/AutomataClient-c15b11550861db1721d880e93528f2de.css.map": {
+      "logical_path": "AutomataClient.map",
+      "mtime": "2017-05-05T15:41:13.000Z",
+      "size": 634859,
+      "digest": "5ef2c6ead894784c7cc6"
+    },
+    "js/AutomataViewer-c5e28d2cf63911e57c01.js": {
+      "logical_path": "AutomataViewer.js",
+      "mtime": "2017-05-05T15:41:13.000Z",
+      "size": 837975,
+      "digest": "c5e28d2cf63911e57c01"
+    },
+    "../../maps/js/AutomataViewer-c5e28d2cf63911e57c01.js.map": {
+      "logical_path": "AutomataViewer.map",
+      "mtime": "2017-05-05T15:41:13.000Z",
+      "size": 837975,
+      "digest": "c5e28d2cf63911e57c01"
+    },
+    "js/AutomataManifest-d41d8cd98f00b204e980.js": {
+      "logical_path": "AutomataManifest.js",
+      "mtime": "2017-05-05T15:41:13.000Z",
+      "size": 0,
+      "digest": "d41d8cd98f00b204e980"
+    },
+    "../../maps/js/AutomataManifest-d41d8cd98f00b204e980.js.map": {
+      "logical_path": "AutomataManifest.map",
+      "mtime": "2017-05-05T15:41:13.000Z",
+      "size": 0,
+      "digest": "d41d8cd98f00b204e980"
+    }
+  },
+  "assets": {
+    "AutomataVendor.js": "js/AutomataVendor-1f74751eec0d6a15cd7e.js",
+    "AutomataVendor.map": "../../maps/js/AutomataVendor-1f74751eec0d6a15cd7e.js.map",
+    "AutomataClient.js": "js/AutomataClient-5ef2c6ead894784c7cc6.js",
+    "AutomataClient.css": "css/AutomataClient-c15b11550861db1721d880e93528f2de.css",
+    "AutomataClient.map": "../../maps/css/AutomataClient-c15b11550861db1721d880e93528f2de.css.map",
+    "AutomataViewer.js": "js/AutomataViewer-c5e28d2cf63911e57c01.js",
+    "AutomataViewer.map": "../../maps/js/AutomataViewer-c5e28d2cf63911e57c01.js.map",
+    "AutomataManifest.js": "js/AutomataManifest-d41d8cd98f00b204e980.js",
+    "AutomataManifest.map": "../../maps/js/AutomataManifest-d41d8cd98f00b204e980.js.map"
+  }
+}

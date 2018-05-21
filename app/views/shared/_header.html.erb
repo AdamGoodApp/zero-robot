@@ -1,0 +1,21 @@
+<%=
+  email = user_signed_in? ? @user.email : nil
+
+  paths = {
+    dashboard:  {path: dashboard_path, active: current_page?(controller: '/robot', action: 'dashboard') || current_page?('/dashboard')},
+    viewer:     {path: viewer_path, active: current_page?(controller: '/robot', action: 'viewer')},
+    expert_dashboard: {path: expert_dashboard_path, active: current_page?(controller: '/robot', action: 'expert_dashboard')},
+    profile:    {path: edit_user_registration_path, active: current_page?(controller: '/users/registrations', action: 'edit')},
+    logout:     {path: destroy_user_session_path, active: current_page?(controller: '/users/sessions', action: 'destroy')},
+    sign_in:    {path: new_user_session_path, active: current_page?(controller: '/users/sessions', action: 'new')},
+    sign_up:    {path: new_user_registration_path, active: current_page?(controller: '/users/registrations', action: 'new')},
+  }
+
+  args = {
+    email: email, expert_dashboard: (can? :read_expert_dashboard, @user),
+    paths: paths,
+    setup: (@must_setup.nil? ? false : true),
+  }
+
+  react_component('ReactHeader', args, {prerender: @should_prerender})
+%>

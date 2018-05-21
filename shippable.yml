@@ -1,0 +1,46 @@
+language: ruby
+
+rvm:
+  - 2.3.0
+
+integrations:
+  notifications:
+    - integrationName: slack-integration
+      type: slack
+      recipients:
+        - "#ci"
+      # branches:
+      #   only:
+      #     - master
+      #     - development
+      on_success: change
+      on_failure: always
+
+services:
+  - mysql
+
+build:
+  ci:
+    # Install dependencies for MP & Gems
+    - sudo apt-get update -qq
+    - sudo apt-get install software-properties-common
+    - sudo add-apt-repository ppa:george-edison55/cmake-3.x
+    - sudo apt-get update -qq
+    - sudo apt-get install -qq cmake libtool libtool-bin
+    # Setup MP
+    - mkdir mp
+    - git clone git@bitbucket.org:automata_tech/motion_planning.git && cd motion_planning
+    - mkdir build && cd build
+    - cmake .. -DCMAKE_INSTALL_PREFIX=`pwd`/../../mp
+    - make && make install
+    - cd ../..
+    # Setup CI config
+    - mkdir -p shippable/testresults
+    - mkdir -p shippable/codecoverage
+    # Setup Database & Gems
+    - mysql -e "CREATE USER shippable@localhost IDENTIFIED BY ''; GRANT ALL ON *.* TO shippable@localhost; FLUSH PRIVILEGES;"
+    - cp config/database.shippable.yml config/database.yml
+    - bundle install
+    - RAILS_ENV=test rails db:reset
+    # Run
+    - LD_LIBRARY_PATH="`pwd`/mp/lib:$LD_LIBRARY_PATH" COVERAGE_REPORTS=shippable/codecoverage rspec -f JUnit -o shippable/testresults/results.xml

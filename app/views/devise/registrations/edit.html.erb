@@ -1,0 +1,18 @@
+<%=
+  tokens = []
+  @tokens.each do |token|
+    tokens << {url: token_remove_path(token.id), access: token.access_token}
+  end
+
+  args = {
+    user: resource,
+    errors: resource.errors,
+    url: registration_path(resource_name),
+    password_length: @minimum_password_length,
+    add_token_url: token_add_path,
+    tokens: tokens,
+    authenticity_token: form_authenticity_token
+  }
+
+  react_component('ReactProfile', args, {prerender: @should_prerender, class: 'react-component'})
+%>

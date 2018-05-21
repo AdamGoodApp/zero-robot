@@ -1,0 +1,13 @@
+<% content_for :title do %>Setup<% end %>
+
+<%=
+  args = {
+    user: {},
+    errors: {},
+    url: user_registration_path,
+    password_length: @minimum_password_length,
+    authenticity_token: form_authenticity_token
+  }
+
+  react_component('ReactSetup', args, {prerender: @should_prerender, class: 'react-component'})
+%>

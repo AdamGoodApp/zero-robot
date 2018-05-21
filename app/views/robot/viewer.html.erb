@@ -1,0 +1,5 @@
+<% content_for :title do %>3D Viewer<% end %>
+<% content_for :fullscreen do %>Yes<% end %>
+<% content_for :custom_js do %>AutomataViewer<% end %>
+
+<%= react_component('ReactViewer', @view_config, {prerender: @should_prerender, class: 'react-component'}) %>

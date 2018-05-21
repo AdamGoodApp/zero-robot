@@ -1,0 +1,2 @@
+describe ApplicationHelper do
+end

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title><%= content_for?(:title) ? yield(:title) + ' - ' : '' %>Automata</title>
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=0, width=device-width, height=device-height">
+  <%= stylesheet_link_tag 'AutomataClient', media: 'all' %>
+  <%= csrf_meta_tags %>
+  <%= action_cable_meta_tag %>
+</head>
+<body class="<%= content_for?(:fullscreen) ? 'fullscreen-mode' : '' %>">
+<%= render 'shared/header' %>
+
+<div class="<%= content_for?(:fixed_width) ? 'container' : 'container-fluid' %>" id="primary-content">
+  <%= yield %>
+</div>
+
+<%= render 'shared/messages' %>
+<%= javascript_include_tag 'AutomataManifest' %>
+<%= javascript_include_tag 'AutomataVendor' %>
+<% if content_for?(:custom_js) %>
+    <%= javascript_include_tag yield(:custom_js) %>
+<% end %>
+<%= javascript_include_tag 'AutomataClient' %>
+</body>
+</html>

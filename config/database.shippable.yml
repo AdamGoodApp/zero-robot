@@ -1,0 +1,26 @@
+default: &default
+  adapter: mysql2
+  encoding: utf8
+  pool: 5
+  username: root
+  password: root
+  host: localhost
+
+development:
+  <<: *default
+  database: automata_development
+  # DO NOT USE
+
+test:
+  <<: *default
+  database: test
+  socket: /var/run/mysqld/mysqld.sock
+  username: shippable
+  password: ''
+  pool: 5
+  timeout: 5000
+
+production:
+  <<: *default
+  database: automata_production
+  # DO NOT USE

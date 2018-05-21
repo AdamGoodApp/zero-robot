@@ -1,0 +1,14 @@
+<% content_for :fixed_width do %>Yes<% end %>
+
+<%=
+  args = {
+    user: resource,
+    errors: resource.errors,
+    url: password_path(resource_name),
+    password_length: @minimum_password_length,
+    reset_password_token: params[:reset_password_token] || resource.reset_password_token,
+    authenticity_token: form_authenticity_token
+  }
+
+  react_component('ReactPasswordEdit', args, {prerender: @should_prerender, class: 'react-component'})
+%>

@@ -1,0 +1,15 @@
+development:
+  adapter: memory
+  synchronize: false
+
+test:
+  adapter: memory
+  synchronize: false
+
+staging:
+  adapter: memory
+  synchronize: false
+
+production:
+  adapter: memory
+  synchronize: false
